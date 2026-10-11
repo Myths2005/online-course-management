@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - CourseHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="courses-page-body">
+
+<div class="lms-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <div class="logo-icon">C</div>
+            <span>CourseHub</span>
+        </div>
+
+        <div class="menu-section">
+
+            <div class="menu-title">MAIN MENU</div>
+
+            <a href="dashboard.html" class="menu-item">
+                <span class="menu-icon">01</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="my-courses.html" class="menu-item">
+                <span class="menu-icon">02</span>
+                <span>My Courses</span>
+            </a>
+
+            <a href="courses.html" class="menu-item active">
+                <span class="menu-icon">03</span>
+                <span>All Courses</span>
+            </a>
+
+            <a href="enrollments.html" class="menu-item">
+                <span class="menu-icon">04</span>
+                <span>My Enrollments</span>
+            </a>
+
+        </div>
+
+        <div class="menu-section account-menu">
+
+            <div class="menu-title">ACCOUNT</div>
+
+            <a href="profile.html" class="menu-item">
+                <span class="menu-icon">05</span>
+                <span>Profile</span>
+            </a>
+
+            <a href="settings.html" class="menu-item">
+                <span class="menu-icon">06</span>
+                <span>Settings</span>
+            </a>
+
+        </div>
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html"
+               class="menu-item logout-item"
+               onclick="logout()">
+
+                <span class="menu-icon">↗</span>
+                <span>Logout</span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div class="mobile-logo">
+                CourseHub
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="student-profile">
+
+                    <div class="profile-avatar"
+                         id="courseProfileAvatar">
+                        M
+                    </div>
+
+                    <div class="profile-info">
+
+                        <strong id="courseStudentName">
+                            Student
+                        </strong>
+
+                        <span>
+                            Student
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- COURSES CONTENT -->
+        <section class="courses-page">
+
+            <!-- PAGE HEADER -->
+            <div class="courses-page-header">
+
+                <div class="small-heading">
+                    COURSE LIBRARY
+                </div>
+
+                <div class="courses-heading-row">
+
+                    <div>
+
+                        <h1>
+                            Find your next
+                            <span>skill.</span>
+                        </h1>
+
+                        <p>
+                            Explore available courses and choose what you want to learn next.
+                        </p>
+
+                    </div>
+
+                    <div class="course-page-note">
+
+                        <strong>
+                            Learn at your pace
+                        </strong>
+
+                        <span>
+                            Choose a course and start building your skills.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SEARCH -->
+            <div class="course-toolbar">
+
+                <div class="course-search-wrapper">
+
+                    <span class="search-icon">
+                        /
+                    </span>
+
+                    <input
+                        type="text"
+                        id="courseSearch"
+                        class="course-search"
+                        placeholder="Search courses..."
+                        autocomplete="off">
+
+                </div>
+
+                <div class="course-result-info">
+
+                    <span id="courseCount">
+                        Loading courses...
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- COURSE SECTION -->
+            <div class="course-section-intro">
+
+                <div>
+
+                    <div class="panel-label">
+                        AVAILABLE NOW
+                    </div>
+
+                    <h2>
+                        Courses
+                    </h2>
+
+                </div>
+
+                <a href="my-courses.html"
+                   class="text-link">
+                    View My Courses →
+                </a>
+
+            </div>
+
+
+            <!-- COURSE LIST -->
+            <div id="courseContainer"
+                 class="lms-course-grid">
+
+                <div class="loading-course">
+                    Loading courses...
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="dashboard-footer">
+
+            <span>
+                © 2026 CourseHub
+            </span>
+
+            <span>
+                Online Course Management System
+            </span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

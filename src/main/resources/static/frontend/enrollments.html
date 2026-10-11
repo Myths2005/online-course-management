@@ -1,0 +1,392 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Enrollments - CourseHub</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="lms-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                C
+            </div>
+
+            <span>
+                CourseHub
+            </span>
+
+        </div>
+
+
+        <!-- ================= MAIN MENU ================= -->
+
+        <div class="menu-section">
+
+            <div class="menu-title">
+                MAIN MENU
+            </div>
+
+
+            <a href="dashboard.html"
+               class="menu-item">
+
+                <span class="menu-icon">
+                    ▦
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a href="my-courses.html"
+               class="menu-item">
+
+                <span class="menu-icon">
+                    📚
+                </span>
+
+                <span>
+                    My Courses
+                </span>
+
+            </a>
+
+
+            <a href="courses.html"
+               class="menu-item">
+
+                <span class="menu-icon">
+                    🔎
+                </span>
+
+                <span>
+                    All Courses
+                </span>
+
+            </a>
+
+
+            <a href="enrollments.html"
+               class="menu-item active">
+
+                <span class="menu-icon">
+                    ✓
+                </span>
+
+                <span>
+                    My Enrollments
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- ================= ACCOUNT ================= -->
+
+        <div class="menu-section account-menu">
+
+            <div class="menu-title">
+                ACCOUNT
+            </div>
+
+
+            <a href="profile.html"
+               class="menu-item">
+
+                <span class="menu-icon">
+                    👤
+                </span>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+
+            <a href="settings.html"
+               class="menu-item">
+
+                <span class="menu-icon">
+                    ⚙
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- ================= LOGOUT ================= -->
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html"
+               class="menu-item logout-item"
+               onclick="logout()">
+
+                <span class="menu-icon">
+                    ↪
+                </span>
+
+                <span>
+                    Logout
+                </span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-content">
+
+
+        <!-- ================= TOP BAR ================= -->
+
+        <header class="topbar">
+
+            <div class="mobile-logo">
+                CourseHub
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button class="notification-button"
+                        type="button"
+                        aria-label="Notifications">
+
+                    🔔
+
+                </button>
+
+
+                <div class="student-profile">
+
+                    <div class="profile-avatar"
+                         id="enrollmentProfileAvatar">
+
+                        M
+
+                    </div>
+
+
+                    <div class="profile-info">
+
+                        <strong id="enrollmentStudentName">
+                            Student
+                        </strong>
+
+                        <span>
+                            Student
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= ENROLLMENTS PAGE ================= -->
+
+        <section class="enrollments-page">
+
+
+            <!-- ================= PAGE INTRO ================= -->
+
+            <div class="enrollment-header">
+
+                <div class="small-heading">
+                    LEARNING ACTIVITY
+                </div>
+
+
+                <div class="enrollment-heading-row">
+
+                    <div>
+
+                        <h1>
+                            Your learning
+                            <span>journey.</span>
+                        </h1>
+
+                        <p>
+                            Keep track of the courses you have joined and your current learning status.
+                        </p>
+
+                    </div>
+
+
+                    <a href="courses.html"
+                       class="dashboard-primary-button">
+
+                        Explore Courses
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= ENROLLMENT STATS ================= -->
+
+            <div class="enrollment-stats">
+
+
+                <div class="enrollment-stat">
+
+                    <div class="stat-label">
+                        TOTAL ENROLLMENTS
+                    </div>
+
+                    <h2 id="enrollmentTotal">
+                        0
+                    </h2>
+
+                    <p>
+                        Courses joined
+                    </p>
+
+                </div>
+
+
+                <div class="enrollment-stat">
+
+                    <div class="stat-label">
+                        ACTIVE COURSES
+                    </div>
+
+                    <h2 id="enrollmentActive">
+                        0
+                    </h2>
+
+                    <p>
+                        Currently learning
+                    </p>
+
+                </div>
+
+
+                <div class="enrollment-stat">
+
+                    <div class="stat-label">
+                        COMPLETED
+                    </div>
+
+                    <h2 id="enrollmentCompleted">
+                        0
+                    </h2>
+
+                    <p>
+                        Finished courses
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= ENROLLMENT LIST ================= -->
+
+            <div class="enrollment-panel">
+
+
+                <div class="enrollment-panel-header">
+
+                    <div>
+
+                        <div class="panel-label">
+                            YOUR COURSES
+                        </div>
+
+                        <h2>
+                            Enrolled Courses
+                        </h2>
+
+                        <p>
+                            View the courses you are currently enrolled in.
+                        </p>
+
+                    </div>
+
+
+                    <a href="my-courses.html"
+                       class="text-link">
+
+                        My Courses →
+
+                    </a>
+
+                </div>
+
+
+                <div id="enrollmentContainer"
+                     class="lms-enrollment-list">
+
+                    <div class="loading-course">
+                        Loading enrollments...
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer class="dashboard-footer">
+
+            <span>
+                © 2026 CourseHub
+            </span>
+
+            <span>
+                Online Course Management System
+            </span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+```

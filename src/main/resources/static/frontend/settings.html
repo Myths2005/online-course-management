@@ -1,0 +1,592 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | CourseHub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="lms-layout">
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                C
+            </div>
+
+            <span>
+                CourseHub
+            </span>
+
+        </div>
+
+
+        <!-- ================= MAIN MENU ================= -->
+
+        <div class="menu-section">
+
+            <div class="menu-title">
+                MAIN MENU
+            </div>
+
+
+            <a href="dashboard.html"
+               class="menu-item">
+
+                <span class="menu-icon">
+                    ▦
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a href="my-courses.html"
+               class="menu-item">
+
+                <span class="menu-icon">
+                    📚
+                </span>
+
+                <span>
+                    My Courses
+                </span>
+
+            </a>
+
+
+            <a href="courses.html"
+               class="menu-item">
+
+                <span class="menu-icon">
+                    🔎
+                </span>
+
+                <span>
+                    All Courses
+                </span>
+
+            </a>
+
+
+            <a href="enrollments.html"
+               class="menu-item">
+
+                <span class="menu-icon">
+                    ✓
+                </span>
+
+                <span>
+                    My Enrollments
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- ================= ACCOUNT ================= -->
+
+        <div class="menu-section account-menu">
+
+            <div class="menu-title">
+                ACCOUNT
+            </div>
+
+
+            <a href="profile.html"
+               class="menu-item">
+
+                <span class="menu-icon">
+                    👤
+                </span>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+
+            <a href="settings.html"
+               class="menu-item active">
+
+                <span class="menu-icon">
+                    ⚙
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- ================= LOGOUT ================= -->
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html"
+               class="menu-item logout-item"
+               onclick="logout()">
+
+                <span class="menu-icon">
+                    ↪
+                </span>
+
+                <span>
+                    Logout
+                </span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- ================= TOP BAR ================= -->
+
+        <header class="topbar">
+
+            <div class="mobile-logo">
+                CourseHub
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button class="notification-button"
+                        type="button"
+                        aria-label="Notifications">
+
+                    🔔
+
+                </button>
+
+
+                <div class="student-profile">
+
+                    <div class="profile-avatar"
+                         id="settingsAvatar">
+
+                        M
+
+                    </div>
+
+
+                    <div class="profile-info">
+
+                        <strong id="settingsStudentName">
+                            Student
+                        </strong>
+
+                        <span>
+                            Student
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= SETTINGS PAGE ================= -->
+
+        <section class="dashboard-content">
+
+
+            <!-- ================= PAGE INTRO ================= -->
+
+            <div class="settings-page-header">
+
+                <div class="small-heading">
+                    ACCOUNT
+                </div>
+
+
+                <h1>
+                    Account settings.
+                </h1>
+
+
+                <p>
+                    Manage your account information and keep your details up to date.
+                </p>
+
+            </div>
+
+
+            <!-- ================= SETTINGS CARD ================= -->
+
+            <div class="settings-card">
+
+
+                <div class="settings-card-header">
+
+                    <div>
+
+                        <div class="panel-label">
+                            ACCOUNT INFORMATION
+                        </div>
+
+                        <h2>
+                            Personal Details
+                        </h2>
+
+                        <p>
+                            Update the information associated with your CourseHub account.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= SETTINGS FORM ================= -->
+
+                <form id="settingsForm">
+
+
+                    <!-- ================= BASIC INFORMATION ================= -->
+
+                    <div class="settings-section">
+
+                        <div class="settings-section-title">
+
+                            <span>
+                                01
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Basic Information
+                                </h3>
+
+                                <p>
+                                    Your name and email address.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-form-grid">
+
+
+                            <!-- NAME -->
+
+                            <div class="settings-field">
+
+                                <label for="name">
+                                    Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="name"
+                                    placeholder="Enter your name"
+                                    required>
+
+                            </div>
+
+
+                            <!-- EMAIL -->
+
+                            <div class="settings-field">
+
+                                <label for="email">
+                                    Email Address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    placeholder="Enter your email"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= SECURITY ================= -->
+
+                    <div class="settings-section">
+
+                        <div class="settings-section-title">
+
+                            <span>
+                                02
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Security
+                                </h3>
+
+                                <p>
+                                    Keep your account password updated.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-form-grid">
+
+
+                            <div class="settings-field">
+
+                                <label for="password">
+                                    Password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    placeholder="Enter your password"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= CONTACT ================= -->
+
+                    <div class="settings-section">
+
+                        <div class="settings-section-title">
+
+                            <span>
+                                03
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Contact Information
+                                </h3>
+
+                                <p>
+                                    Add your contact and address details.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-form-grid">
+
+
+                            <!-- MOBILE -->
+
+                            <div class="settings-field">
+
+                                <label for="mobilePhone">
+                                    Mobile Phone
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="mobilePhone"
+                                    placeholder="Enter your mobile number">
+
+                            </div>
+
+
+                            <!-- ADDRESS -->
+
+                            <div class="settings-field settings-field-full">
+
+                                <label for="address">
+                                    Address
+                                </label>
+
+                                <textarea
+                                    id="address"
+                                    placeholder="Enter your address"
+                                    rows="3"></textarea>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= ACADEMIC ================= -->
+
+                    <div class="settings-section">
+
+                        <div class="settings-section-title">
+
+                            <span>
+                                04
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Academic Information
+                                </h3>
+
+                                <p>
+                                    Keep your student information current.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-form-grid">
+
+
+                            <!-- ID NUMBER -->
+
+                            <div class="settings-field">
+
+                                <label for="idNumber">
+                                    ID Number
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="idNumber"
+                                    placeholder="Enter your ID number">
+
+                            </div>
+
+
+                            <!-- INSTITUTION -->
+
+                            <div class="settings-field">
+
+                                <label for="institution">
+                                    Institution
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="institution"
+                                    placeholder="Enter your institution">
+
+                            </div>
+
+
+                            <!-- DEPARTMENT -->
+
+                            <div class="settings-field">
+
+                                <label for="department">
+                                    Department
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="department"
+                                    placeholder="Enter your department">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= SAVE ================= -->
+
+                    <div class="settings-actions">
+
+                        <button
+                            type="submit"
+                            class="save-settings-button">
+
+                            Save Changes
+                            <span>→</span>
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+
+                <!-- ================= MESSAGE ================= -->
+
+                <p id="message"
+                   class="settings-message">
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer class="dashboard-footer">
+
+            <span>
+                © 2026 CourseHub
+            </span>
+
+            <span>
+                Online Course Management System
+            </span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+```

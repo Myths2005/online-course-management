@@ -1,0 +1,574 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | CourseHub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="lms-layout">
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                C
+            </div>
+
+            <span>
+                CourseHub
+            </span>
+
+        </div>
+
+
+        <!-- ================= MAIN MENU ================= -->
+
+        <div class="menu-section">
+
+            <div class="menu-title">
+                MAIN MENU
+            </div>
+
+
+            <a href="dashboard.html"
+               class="menu-item">
+
+                <span class="menu-icon">
+                    ▦
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a href="my-courses.html"
+               class="menu-item">
+
+                <span class="menu-icon">
+                    📚
+                </span>
+
+                <span>
+                    My Courses
+                </span>
+
+            </a>
+
+
+            <a href="courses.html"
+               class="menu-item">
+
+                <span class="menu-icon">
+                    🔎
+                </span>
+
+                <span>
+                    All Courses
+                </span>
+
+            </a>
+
+
+            <a href="enrollments.html"
+               class="menu-item">
+
+                <span class="menu-icon">
+                    ✓
+                </span>
+
+                <span>
+                    My Enrollments
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- ================= ACCOUNT ================= -->
+
+        <div class="menu-section account-menu">
+
+            <div class="menu-title">
+                ACCOUNT
+            </div>
+
+
+            <a href="profile.html"
+               class="menu-item active">
+
+                <span class="menu-icon">
+                    👤
+                </span>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+
+            <a href="settings.html"
+               class="menu-item">
+
+                <span class="menu-icon">
+                    ⚙
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- ================= LOGOUT ================= -->
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html"
+               class="menu-item logout-item"
+               onclick="logout()">
+
+                <span class="menu-icon">
+                    ↪
+                </span>
+
+                <span>
+                    Logout
+                </span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- ================= TOP BAR ================= -->
+
+        <header class="topbar">
+
+            <div class="mobile-logo">
+                CourseHub
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button class="notification-button"
+                        type="button"
+                        aria-label="Notifications">
+
+                    🔔
+
+                </button>
+
+
+                <div class="student-profile">
+
+                    <div class="profile-avatar"
+                         id="topAvatar">
+
+                        M
+
+                    </div>
+
+
+                    <div class="profile-info">
+
+                        <strong id="topName">
+                            Student
+                        </strong>
+
+                        <span>
+                            Student
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= PROFILE PAGE ================= -->
+
+        <section class="dashboard-content">
+
+
+            <!-- ================= PAGE INTRO ================= -->
+
+            <div class="profile-page-header">
+
+                <div class="small-heading">
+                    ACCOUNT
+                </div>
+
+
+                <h1>
+                    Your profile.
+                </h1>
+
+
+                <p>
+                    Manage your personal and academic information.
+                </p>
+
+            </div>
+
+
+            <!-- ================= PROFILE CARD ================= -->
+
+            <div class="profile-main-card">
+
+
+                <!-- ================= PROFILE HEADER ================= -->
+
+                <div class="profile-header-section">
+
+
+                    <div class="profile-picture-container">
+
+                        <img
+                            id="profileImage"
+                            src="https://ui-avatars.com/api/?name=Student&background=4a6cf7&color=fff&size=200"
+                            alt="Profile Picture"
+                            class="profile-picture">
+
+
+                        <label
+                            for="imageUpload"
+                            class="change-photo-button">
+
+                            📷 Change Photo
+
+                        </label>
+
+
+                        <input
+                            type="file"
+                            id="imageUpload"
+                            accept="image/*"
+                            style="display:none;">
+
+                    </div>
+
+
+                    <div class="profile-header-info">
+
+                        <div class="panel-label">
+                            STUDENT ACCOUNT
+                        </div>
+
+
+                        <h2 id="profileName">
+                            Student
+                        </h2>
+
+
+                        <p>
+                            Student
+                        </p>
+
+                    </div>
+
+
+                    <!-- EDIT BUTTON -->
+
+                    <div class="profile-action">
+
+                        <button
+                            id="editButton"
+                            class="edit-profile-button"
+                            onclick="enableEditing()">
+
+                            ✏️ Edit Profile
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= PERSONAL INFORMATION ================= -->
+
+                <div class="profile-section">
+
+
+                    <div class="profile-section-heading">
+
+                        <div>
+
+                            <div class="panel-label">
+                                PERSONAL DETAILS
+                            </div>
+
+                            <h3>
+                                Personal Information
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-form-grid">
+
+
+                        <!-- FULL NAME -->
+
+                        <div class="profile-field">
+
+                            <label for="fullName">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                placeholder="Enter your full name"
+                                disabled>
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+
+                        <div class="profile-field">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                disabled>
+
+                        </div>
+
+
+                        <!-- MOBILE -->
+
+                        <div class="profile-field">
+
+                            <label for="mobilePhone">
+                                Mobile Phone
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="mobilePhone"
+                                placeholder="Enter mobile number"
+                                disabled>
+
+                        </div>
+
+
+                        <!-- ADDRESS -->
+
+                        <div class="profile-field">
+
+                            <label for="address">
+                                Address
+                            </label>
+
+                            <input
+                                type="text"
+                                id="address"
+                                placeholder="Enter your address"
+                                disabled>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= ACADEMIC INFORMATION ================= -->
+
+                <div class="profile-section">
+
+
+                    <div class="profile-section-heading">
+
+                        <div>
+
+                            <div class="panel-label">
+                                EDUCATION
+                            </div>
+
+                            <h3>
+                                Academic Information
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-form-grid">
+
+
+                        <!-- ID NUMBER -->
+
+                        <div class="profile-field">
+
+                            <label for="idNumber">
+                                ID Number
+                            </label>
+
+                            <input
+                                type="text"
+                                id="idNumber"
+                                placeholder="Enter student ID"
+                                disabled>
+
+                        </div>
+
+
+                        <!-- INSTITUTION -->
+
+                        <div class="profile-field">
+
+                            <label for="institution">
+                                Institution
+                            </label>
+
+                            <input
+                                type="text"
+                                id="institution"
+                                placeholder="Enter institution"
+                                disabled>
+
+                        </div>
+
+
+                        <!-- DEPARTMENT -->
+
+                        <div class="profile-field">
+
+                            <label for="department">
+                                Department
+                            </label>
+
+                            <input
+                                type="text"
+                                id="department"
+                                placeholder="Enter department"
+                                disabled>
+
+                        </div>
+
+
+                        <!-- ROLE -->
+
+                        <div class="profile-field">
+
+                            <label for="role">
+                                Role
+                            </label>
+
+                            <input
+                                type="text"
+                                id="role"
+                                value="STUDENT"
+                                disabled>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= SAVE / CANCEL ================= -->
+
+                <div
+                    class="save-section"
+                    id="saveSection"
+                    style="display:none;">
+
+                    <button
+                        class="cancel-button"
+                        onclick="cancelEditing()">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button
+                        class="save-profile-button"
+                        onclick="saveProfile()">
+
+                        💾 Save Changes
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer class="dashboard-footer">
+
+            <span>
+                © 2026 CourseHub
+            </span>
+
+            <span>
+                Online Course Management System
+            </span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+```

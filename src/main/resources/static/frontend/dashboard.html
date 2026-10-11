@@ -1,0 +1,599 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - CourseHub</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="lms-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <div class="logo-icon">
+                CH
+            </div>
+
+            <span>
+                CourseHub
+            </span>
+        </div>
+
+
+        <div class="menu-section">
+
+            <div class="menu-title">
+                MAIN MENU
+            </div>
+
+
+            <a href="dashboard.html"
+               class="menu-item active">
+
+                <span class="menu-icon">
+                    ▦
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a href="my-courses.html"
+               class="menu-item">
+
+                <span class="menu-icon">
+                    📚
+                </span>
+
+                <span>
+                    My Courses
+                </span>
+
+            </a>
+
+
+            <a href="courses.html"
+               class="menu-item">
+
+                <span class="menu-icon">
+                    🔎
+                </span>
+
+                <span>
+                    All Courses
+                </span>
+
+            </a>
+
+
+            <a href="enrollments.html"
+               class="menu-item">
+
+                <span class="menu-icon">
+                    ✓
+                </span>
+
+                <span>
+                    My Enrollments
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- ================= ACCOUNT MENU ================= -->
+
+        <div class="menu-section account-menu">
+
+            <div class="menu-title">
+                ACCOUNT
+            </div>
+
+
+            <a href="profile.html"
+               class="menu-item">
+
+                <span class="menu-icon">
+                    👤
+                </span>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+
+            <a href="settings.html"
+               class="menu-item">
+
+                <span class="menu-icon">
+                    ⚙
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- ================= LOGOUT ================= -->
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html"
+               class="menu-item logout-item"
+               onclick="logout()">
+
+                <span class="menu-icon">
+                    ↪
+                </span>
+
+                <span>
+                    Logout
+                </span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- ================= TOP BAR ================= -->
+
+        <div class="topbar">
+
+            <div class="mobile-logo">
+                CourseHub
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button class="notification-button">
+                    🔔
+                    <span class="notification-dot"></span>
+                </button>
+
+
+                <div class="student-profile">
+
+                    <div class="profile-avatar"
+                         id="profileAvatar">
+                        M
+                    </div>
+
+
+                    <div class="profile-info">
+
+                        <strong id="topStudentName">
+                            Student
+                        </strong>
+
+                        <span>
+                            Student
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section class="dashboard-content">
+
+
+            <!-- ================= WELCOME ================= -->
+
+            <div class="welcome-section">
+
+                <div class="small-heading">
+                    STUDENT DASHBOARD
+                </div>
+
+                <h1>
+                    Welcome back,
+                    <span id="studentName">
+                        Student
+                    </span>
+                    👋
+                </h1>
+
+                <p>
+                    Continue your learning journey and build new skills.
+                </p>
+
+            </div>
+
+
+            <!-- ================= STATISTICS ================= -->
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        📚
+                    </div>
+
+                    <div class="stat-info">
+
+                        <span>
+                            Total Courses
+                        </span>
+
+                        <h2 id="totalCourses">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        ▶
+                    </div>
+
+                    <div class="stat-info">
+
+                        <span>
+                            Active Courses
+                        </span>
+
+                        <h2 id="activeCourses">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        ✓
+                    </div>
+
+                    <div class="stat-info">
+
+                        <span>
+                            Completed
+                        </span>
+
+                        <h2 id="completedCourses">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        %
+                    </div>
+
+                    <div class="stat-info">
+
+                        <span>
+                            Overall Progress
+                        </span>
+
+                        <h2 id="overallProgress">
+                            0%
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= DASHBOARD TWO COLUMN ================= -->
+
+            <div class="dashboard-grid">
+
+
+                <!-- ================= CONTINUE LEARNING ================= -->
+
+                <div class="dashboard-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2>
+                                Continue Learning
+                            </h2>
+
+                            <p>
+                                Pick up where you left off
+                            </p>
+
+                        </div>
+
+
+                        <a href="courses.html">
+                            View Courses →
+                        </a>
+
+                    </div>
+
+
+                    <div class="learning-card">
+
+
+                        <div class="course-thumbnail">
+                            JAVA
+                        </div>
+
+
+                        <div class="learning-info">
+
+                            <h3 id="continueCourseTitle">
+                                No course yet
+                            </h3>
+
+                            <p id="continueInstructor">
+                                Enroll in a course to start learning.
+                            </p>
+
+
+                            <div class="course-meta">
+
+                                <span>
+                                    📚 Online
+                                </span>
+
+                                <span>
+                                    ⏱ Self-paced
+                                </span>
+
+                            </div>
+
+
+                            <div class="progress-area">
+
+                                <div class="progress-label">
+
+                                    <span>
+                                        Course Progress
+                                    </span>
+
+                                    <strong id="continueProgressText">
+                                        0%
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="progress-bar">
+
+                                    <div class="progress-fill"
+                                         id="continueProgressBar"
+                                         style="width: 0%;">
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <button class="continue-button"
+                                    onclick="window.location.href='courses.html'">
+
+                                Browse Courses →
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= QUICK ACTIONS ================= -->
+
+                <div class="dashboard-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2>
+                                Quick Actions
+                            </h2>
+
+                            <p>
+                                Manage your learning
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="courses.html"
+                       class="quick-action">
+
+                        <span class="quick-icon">
+                            📚
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Browse Courses
+                            </strong>
+
+                            <span>
+                                Explore available courses
+                            </span>
+
+                        </div>
+
+                        <b>
+                            →
+                        </b>
+
+                    </a>
+
+
+                    <a href="enrollments.html"
+                       class="quick-action">
+
+                        <span class="quick-icon">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                My Enrollments
+                            </strong>
+
+                            <span>
+                                View enrolled courses
+                            </span>
+
+                        </div>
+
+                        <b>
+                            →
+                        </b>
+
+                    </a>
+
+
+                    <a href="profile.html"
+                       class="quick-action">
+
+                        <span class="quick-icon">
+                            👤
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Account
+                            </strong>
+
+                            <span>
+                                View your account
+                            </span>
+
+                        </div>
+
+                        <b>
+                            →
+                        </b>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= RECOMMENDED COURSES ================= -->
+
+            <div class="courses-panel">
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Recommended Courses
+                        </h2>
+
+                        <p>
+                            Explore courses to improve your skills
+                        </p>
+
+                    </div>
+
+
+                    <a href="courses.html">
+                        View All →
+                    </a>
+
+                </div>
+
+
+                <div id="recommendedCourses"
+                     class="recommended-grid">
+
+                    <div class="loading-course">
+                        Loading courses...
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer class="dashboard-footer">
+
+            <span>
+                © 2026 CourseHub
+            </span>
+
+            <span>
+                Online Course Management System
+            </span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```
